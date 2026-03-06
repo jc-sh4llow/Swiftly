@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiftly - Describe Your Problem</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Swiftly</h1>
+            <p class="tagline">Tell us about your problem</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="problem-section">
+            <div class="container">
+                <div class="problem-container">
+                    <h2 class="text-center mb-2">What specific problem do you need help with?</h2>
+                    
+                    <form id="problemForm">
+                        <div class="form-group">
+                            <label for="problemCategory">Problem Category</label>
+                            <select id="problemCategory" name="problemCategory" required>
+                                <option value="">Select a category...</option>
+                                <option value="plumbing">Plumbing</option>
+                                <option value="electrical">Electrical</option>
+                                <option value="carpentry">Carpentry</option>
+                                <option value="painting">Painting</option>
+                                <option value="hvac">HVAC & Cooling</option>
+                                <option value="roofing">Roofing</option>
+                                <option value="foundation">Foundation</option>
+                                <option value="kitchen">Kitchen Renovation</option>
+                                <option value="bathroom">Bathroom Renovation</option>
+                                <option value="landscaping">Landscaping</option>
+                                <option value="pest-control">Pest Control</option>
+                                <option value="cleaning">Deep Cleaning</option>
+                                <option value="appliances">Appliance Repair</option>
+                                <option value="flooring">Flooring</option>
+                                <option value="windows">Windows & Doors</option>
+                                <option value="general">General Construction</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="problemDescription">Problem Description</label>
+                            <textarea id="problemDescription" name="problemDescription" rows="4" 
+                                      placeholder="Please describe your issue in detail..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="urgency">Urgency Level</label>
+                            <select id="urgency" name="urgency" required>
+                                <option value="">Select urgency...</option>
+                                <option value="emergency">Emergency - Need help immediately</option>
+                                <option value="urgent">Urgent - Within 2-3 days</option>
+                                <option value="normal">Normal - Within a week</option>
+                                <option value="flexible">Flexible - Whenever available</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="budget">Estimated Budget</label>
+                            <select id="budget" name="budget" required>
+                                <option value="">Select budget range...</option>
+                                <option value="under-5k">Under ₱5,000</option>
+                                <option value="5k-15k">₱5,000 - ₱15,000</option>
+                                <option value="15k-30k">₱15,000 - ₱30,000</option>
+                                <option value="30k-50k">₱30,000 - ₱50,000</option>
+                                <option value="50k-100k">₱50,000 - ₱100,000</option>
+                                <option value="100k-plus">Over ₱100,000</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Find Contractors</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Swiftly. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.getElementById('problemForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Store form data
+            const formData = {
+                category: document.getElementById('problemCategory').value,
+                description: document.getElementById('problemDescription').value,
+                urgency: document.getElementById('urgency').value,
+                budget: document.getElementById('budget').value,
+                propertyType: localStorage.getItem('selectedCategory') || 'house'
+            };
+            
+            localStorage.setItem('problemData', JSON.stringify(formData));
+            window.location.href = 'candidates.html';
+        });
+    </script>
+</body>
+</html>

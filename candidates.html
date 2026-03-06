@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiftly - Available Contractors</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Swiftly</h1>
+            <p class="tagline">Available contractors for your project</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="candidates-section">
+            <div class="container">
+                <h2 class="text-center mb-2">Recommended Contractors</h2>
+                
+                <div class="contractor-grid">
+                    <!-- Contractor 1 -->
+                    <div class="contractor-card">
+                        <div class="contractor-header">
+                            <h3 class="contractor-name">ABC Home Solutions</h3>
+                            <p class="contractor-specialty">General Construction & Renovation</p>
+                        </div>
+                        <div class="contractor-body">
+                            <div class="rating">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span>4.2 (127 reviews)</span>
+                            </div>
+                            <div class="contractor-info">
+                                <p><strong>Experience:</strong> 15+ years</p>
+                                <p><strong>Specialties:</strong> Kitchen, Bathroom, General Construction</p>
+                                <p><strong>Service Area:</strong> Metro Manila & surrounding provinces</p>
+                                <p><strong>Response Time:</strong> Usually within 2 hours</p>
+                            </div>
+                            <div class="contact-info">
+                                <span>📞 0917-123-4567</span>
+                                <button class="btn btn-secondary" onclick="selectContractor('1')">View Profile</button>
+                            </div>
+                            <div class="contact-info">
+                                <button class="btn btn-primary" onclick="openMessaging('1')">Message</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contractor 2 -->
+                    <div class="contractor-card">
+                        <div class="contractor-header">
+                            <h3 class="contractor-name">QuickFix Pro Services</h3>
+                            <p class="contractor-specialty">Plumbing & Electrical</p>
+                        </div>
+                        <div class="contractor-body">
+                            <div class="rating">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span>4.8 (89 reviews)</span>
+                            </div>
+                            <div class="contractor-info">
+                                <p><strong>Experience:</strong> 10+ years</p>
+                                <p><strong>Specialties:</strong> Plumbing, Electrical, Emergency Repairs</p>
+                                <p><strong>Service Area:</strong> Quezon City, Mandaluyong, San Juan</p>
+                                <p><strong>Response Time:</strong> Within 1 hour</p>
+                            </div>
+                            <div class="contact-info">
+                                <span>📞 0920-987-6543</span>
+                                <button class="btn btn-secondary" onclick="selectContractor('2')">View Profile</button>
+                            </div>
+                            <div class="contact-info">
+                                <button class="btn btn-primary" onclick="openMessaging('2')">Message</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contractor 3 -->
+                    <div class="contractor-card">
+                        <div class="contractor-header">
+                            <h3 class="contractor-name">Maestro Builders</h3>
+                            <p class="contractor-specialty">Custom Home Construction</p>
+                        </div>
+                        <div class="contractor-body">
+                            <div class="rating">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span>4.9 (203 reviews)</span>
+                            </div>
+                            <div class="contractor-info">
+                                <p><strong>Experience:</strong> 20+ years</p>
+                                <p><strong>Specialties:</strong> Custom Homes, Major Renovations, Design-Build</p>
+                                <p><strong>Service Area:</strong> Entire Metro Manila</p>
+                                <p><strong>Response Time:</strong> Within 24 hours</p>
+                            </div>
+                            <div class="contact-info">
+                                <span>📞 0915-555-1234</span>
+                                <button class="btn btn-secondary" onclick="selectContractor('3')">View Profile</button>
+                            </div>
+                            <div class="contact-info">
+                                <button class="btn btn-primary" onclick="openMessaging('3')">Message</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contractor 4 -->
+                    <div class="contractor-card">
+                        <div class="contractor-header">
+                            <h3 class="contractor-name">Reliable Handyman</h3>
+                            <p class="contractor-specialty">General Repairs & Maintenance</p>
+                        </div>
+                        <div class="contractor-body">
+                            <div class="rating">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span>4.1 (156 reviews)</span>
+                            </div>
+                            <div class="contractor-info">
+                                <p><strong>Experience:</strong> 8+ years</p>
+                                <p><strong>Specialties:</strong> Minor repairs, maintenance, installations</p>
+                                <p><strong>Service Area:</strong> Makati, Pasay, Taguig</p>
+                                <p><strong>Response Time:</strong> Within 3 hours</p>
+                            </div>
+                            <div class="contact-info">
+                                <span>📞 0933-777-8888</span>
+                                <button class="btn btn-secondary" onclick="selectContractor('4')">View Profile</button>
+                            </div>
+                            <div class="contact-info">
+                                <button class="btn btn-primary" onclick="openMessaging('4')">Message</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contractor 5 -->
+                    <div class="contractor-card">
+                        <div class="contractor-header">
+                            <h3 class="contractor-name">Elite Electrical Co.</h3>
+                            <p class="contractor-specialty">Electrical Services & Wiring</p>
+                        </div>
+                        <div class="contractor-body">
+                            <div class="rating">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span>4.7 (92 reviews)</span>
+                            </div>
+                            <div class="contractor-info">
+                                <p><strong>Experience:</strong> 12+ years</p>
+                                <p><strong>Specialties:</strong> Electrical wiring, panel upgrades, lighting</p>
+                                <p><strong>Service Area:</strong> Manila, Caloocan, Malabon</p>
+                                <p><strong>Response Time:</strong> Within 2 hours</p>
+                            </div>
+                            <div class="contact-info">
+                                <span>📞 0918-222-3333</span>
+                                <button class="btn btn-secondary" onclick="selectContractor('5')">View Profile</button>
+                            </div>
+                            <div class="contact-info">
+                                <button class="btn btn-primary" onclick="openMessaging('5')">Message</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contractor 6 -->
+                    <div class="contractor-card">
+                        <div class="contractor-header">
+                            <h3 class="contractor-name">Pro Plumbing Solutions</h3>
+                            <p class="contractor-specialty">Professional Plumbing Services</p>
+                        </div>
+                        <div class="contractor-body">
+                            <div class="rating">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span>4.3 (178 reviews)</span>
+                            </div>
+                            <div class="contractor-info">
+                                <p><strong>Experience:</strong> 14+ years</p>
+                                <p><strong>Specialties:</strong> Pipe repairs, installations, drain cleaning</p>
+                                <p><strong>Service Area:</strong> Pasig, Cainta, Taytay</p>
+                                <p><strong>Response Time:</strong> Within 1 hour for emergencies</p>
+                            </div>
+                            <div class="contact-info">
+                                <span>📞 0927-444-5555</span>
+                                <button class="btn btn-secondary" onclick="selectContractor('6')">View Profile</button>
+                            </div>
+                            <div class="contact-info">
+                                <button class="btn btn-primary" onclick="openMessaging('6')">Message</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Swiftly. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

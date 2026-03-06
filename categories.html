@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiftly - Choose Category</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Swiftly</h1>
+            <p class="tagline">What type of property needs service?</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="category-section">
+            <div class="container">
+                <h2 class="text-center mb-2">Select Property Type</h2>
+                <div class="category-grid">
+                    <div class="category-card" onclick="selectCategory('house')">
+                        <div class="category-icon">🏠</div>
+                        <h3 class="category-title">House</h3>
+                        <p class="category-description">Complete home services and renovations</p>
+                    </div>
+                    
+                    <div class="category-card" onclick="selectCategory('condo')">
+                        <div class="category-icon">🏢</div>
+                        <h3 class="category-title">Condominium</h3>
+                        <p class="category-description">Specialized condo unit services</p>
+                    </div>
+                    
+                    <div class="category-card" onclick="selectCategory('commercial')">
+                        <div class="category-icon">🏬</div>
+                        <h3 class="category-title">Commercial</h3>
+                        <p class="category-description">Business and commercial property services</p>
+                    </div>
+                    
+                    <div class="category-card" onclick="selectCategory('lot')">
+                        <div class="category-icon">🏗️</div>
+                        <h3 class="category-title">Lot/Land</h3>
+                        <p class="category-description">Land development and construction</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Swiftly. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

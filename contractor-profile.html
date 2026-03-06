@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiftly - Contractor Profile</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Swiftly</h1>
+            <p class="tagline">Contractor Profile</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="profile-section">
+            <div class="container">
+                <div class="profile-container">
+                    <div class="profile-header">
+                        <div class="profile-info">
+                            <h2 id="contractorName">ABC Home Solutions</h2>
+                            <p id="contractorSpecialty">General Construction & Renovation</p>
+                            <div class="rating">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span id="ratingText">4.2 (127 reviews)</span>
+                            </div>
+                        </div>
+                        <div class="profile-actions">
+                            <button class="btn btn-primary" onclick="openMessaging('profile')">Message Contractor</button>
+                            <button class="btn btn-secondary" onclick="goBack()">Back to List</button>
+                        </div>
+                    </div>
+
+                    <div class="profile-content">
+                        <div class="profile-details">
+                            <h3>About</h3>
+                            <p id="contractorAbout">
+                                ABC Home Solutions has been providing quality construction and renovation services for over 15 years. 
+                                We specialize in residential projects, from minor repairs to major renovations. Our team of licensed 
+                                professionals is committed to delivering exceptional craftsmanship and customer service.
+                            </p>
+
+                            <h3>Services Offered</h3>
+                            <ul id="servicesList">
+                                <li>Kitchen Renovation</li>
+                                <li>Bathroom Renovation</li>
+                                <li>General Construction</li>
+                                <li>Room Additions</li>
+                                <li>Flooring Installation</li>
+                                <li>Painting Services</li>
+                            </ul>
+
+                            <h3>Business Information</h3>
+                            <div class="business-info">
+                                <p><strong>Years in Business:</strong> <span id="yearsInBusiness">15+ years</span></p>
+                                <p><strong>Licensed:</strong> <span id="licensed">Yes - PRC License #12345</span></p>
+                                <p><strong>Insured:</strong> <span id="insured">Yes - Up to ₱5M coverage</span></p>
+                                <p><strong>Service Area:</strong> <span id="serviceArea">Metro Manila & surrounding provinces</span></p>
+                                <p><strong>Response Time:</strong> <span id="responseTime">Usually within 2 hours</span></p>
+                            </div>
+
+                            <h3>Contact Information</h3>
+                            <div class="contact-details">
+                                <p><strong>Phone:</strong> <span id="phoneNumber">0917-123-4567</span></p>
+                                <p><strong>Email:</strong> <span id="email">info@abchomesolutions.com</span></p>
+                                <p><strong>Address:</strong> <span id="address">123 Main St, Quezon City, Metro Manila</span></p>
+                                <p><strong>Website:</strong> <a href="#" id="website">www.abchomesolutions.com</a></p>
+                            </div>
+
+                            <h3>Recent Reviews</h3>
+                            <div class="reviews-section">
+                                <div class="review">
+                                    <div class="review-header">
+                                        <span class="reviewer-name">Maria Santos</span>
+                                        <div class="review-rating">
+                                            <span class="star">★</span>
+                                            <span class="star">★</span>
+                                            <span class="star">★</span>
+                                            <span class="star">★</span>
+                                            <span class="star">★</span>
+                                        </div>
+                                    </div>
+                                    <p class="review-text">
+                                        "Excellent service! They renovated our kitchen and exceeded our expectations. 
+                                        Professional, on-time, and within budget. Highly recommend!"
+                                    </p>
+                                    <span class="review-date">2 weeks ago</span>
+                                </div>
+
+                                <div class="review">
+                                    <div class="review-header">
+                                        <span class="reviewer-name">John Reyes</span>
+                                        <div class="review-rating">
+                                            <span class="star">★</span>
+                                            <span class="star">★</span>
+                                            <span class="star">★</span>
+                                            <span class="star">★</span>
+                                            <span class="star">☆</span>
+                                        </div>
+                                    </div>
+                                    <p class="review-text">
+                                        "Good quality work on our bathroom renovation. The team was professional and 
+                                        cleaned up after each day. Minor delays but overall satisfied with the result."
+                                    </p>
+                                    <span class="review-date">1 month ago</span>
+                                </div>
+
+                                <div class="review">
+                                    <div class="review-header">
+                                        <span class="reviewer-name">Elena Cruz</span>
+                                        <div class="review-rating">
+                                            <span class="star">★</span>
+                                            <span class="star">★</span>
+                                            <span class="star">★</span>
+                                            <span class="star">★</span>
+                                            <span class="star">★</span>
+                                        </div>
+                                    </div>
+                                    <p class="review-text">
+                                        "ABC Home Solutions did an amazing job on our room addition. They handled all 
+                                        the permits and the work was completed on schedule. Very satisfied!"
+                                    </p>
+                                    <span class="review-date">2 months ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Swiftly. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        // In a real implementation, this would load contractor data based on ID
+        // For now, we're showing a static profile
+    </script>
+</body>
+</html>
