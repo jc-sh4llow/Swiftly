@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiftly - Choose Category</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Swiftly</h1>
+                <p>Fast. Reliable. Professional.</p>
+            </div>
+            <nav class="user-nav">
+                <button class="btn btn-outline" onclick="goToJobRequests()">My Job Requests</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="category-section">
+            <div class="container">
+                <div class="page-header">
+                    <h2>What type of problem do you have?</h2>
+                    <p>Select a category to find the right professionals for your needs</p>
+                </div>
+
+                <div class="category-grid">
+                    <a href="problem.html?category=house" class="category-card">
+                        <div class="category-icon">🏠</div>
+                        <h3>House</h3>
+                        <p>General home repairs and maintenance</p>
+                    </a>
+
+                    <a href="problem.html?category=condo" class="category-card">
+                        <div class="category-icon">🏢</div>
+                        <h3>Condo</h3>
+                        <p>Condominium specific services</p>
+                    </a>
+
+                    <a href="problem.html?category=commercial" class="category-card">
+                        <div class="category-icon">🏬</div>
+                        <h3>Commercial</h3>
+                        <p>Business and commercial properties</p>
+                    </a>
+
+                    <a href="problem.html?category=lot" class="category-card">
+                        <div class="category-icon">🏗️</div>
+                        <h3>Lot</h3>
+                        <p>Land and lot development</p>
+                    </a>
+
+                    <a href="problem.html?category=plumbing" class="category-card">
+                        <div class="category-icon">🔧</div>
+                        <h3>Plumbing</h3>
+                        <P>Pipes, drains, and water systems</P>
+                    </a>
+
+                    <a href="problem.html?category=electrical" class="category-card">
+                        <div class="category-icon">⚡</div>
+                        <h3>Electrical</h3>
+                        <p>Wiring, circuits, and electrical systems</p>
+                    </a>
+
+                    <a href="problem.html?category=hvac" class="category-card">
+                        <div class="category-icon">❄️</div>
+                        <h3>HVAC</h3>
+                        <p>Heating, ventilation, and air conditioning</p>
+                    </a>
+
+                    <a href="problem.html?category=renovation" class="category-card">
+                        <div class="category-icon">🔨</div>
+                        <h3>Renovation</h3>
+                        <p>Home remodeling and improvements</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Swiftly. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        function goToJobRequests() {
+            window.location.href = 'job-requests.html';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiftly - Describe Your Problem</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Swiftly</h1>
+                <p>Fast. Reliable. Professional.</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="problem-section">
+            <div class="container">
+                <div class="problem-form">
+                    <h2>Tell us about your problem</h2>
+                    <form id="problemForm">
+                        <input type="hidden" id="category" name="category">
+                        
+                        <div class="form-group">
+                            <label for="subcategory">Choose a specific sub-category:</label>
+                            <select id="subcategory" name="subcategory" required>
+                                <option value="">Select a sub-category</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Describe your problem in detail:</label>
+                            <textarea id="description" name="description" required placeholder="Please provide as much detail as possible about the issue you're experiencing..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="urgency">How urgent is this issue?</label>
+                            <select id="urgency" name="urgency" required>
+                                <option value="">Select urgency level</option>
+                                <option value="low">Low - Can wait a few days</option>
+                                <option value="medium">Medium - Need service this week</option>
+                                <option value="high">High - Need service as soon as possible</option>
+                                <option value="emergency">Emergency - Need immediate assistance</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="budget">What's your estimated budget?</label>
+                            <select id="budget" name="budget" required>
+                                <option value="">Select budget range</option>
+                                <option value="under-500">Under $500</option>
+                                <option value="500-1000">$500 - $1,000</option>
+                                <option value="1000-2500">$1,000 - $2,500</option>
+                                <option value="2500-5000">$2,500 - $5,000</option>
+                                <option value="5000-10000">$5,000 - $10,000</option>
+                                <option value="over-10000">Over $10,000</option>
+                                <option value="flexible">Flexible - Need quote first</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="location">Service Location:</label>
+                            <input type="text" id="location" name="location" required placeholder="Enter your address or area">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Find Professionals</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Swiftly. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Subcategory data based on category
+        const subcategories = {
+            house: [
+                { value: 'kitchen', text: 'Kitchen' },
+                { value: 'bathroom', text: 'Bathroom' },
+                { value: 'bedroom', text: 'Bedroom' },
+                { value: 'living-room', text: 'Living Room' },
+                { value: 'foundation', text: 'Foundation' },
+                { value: 'roofing', text: 'Roofing' },
+                { value: 'windows', text: 'Windows & Doors' },
+                { value: 'flooring', text: 'Flooring' }
+            ],
+            condo: [
+                { value: 'kitchen', text: 'Kitchen' },
+                { value: 'bathroom', text: 'Bathroom' },
+                { value: 'balcony', text: 'Balcony' },
+                { value: 'interior', text: 'Interior Design' },
+                { value: 'plumbing', text: 'Plumbing Systems' },
+                { value: 'electrical', text: 'Electrical Systems' }
+            ],
+            commercial: [
+                { value: 'office', text: 'Office Space' },
+                { value: 'retail', text: 'Retail Store' },
+                { value: 'warehouse', text: 'Warehouse' },
+                { value: 'restaurant', text: 'Restaurant' },
+                { value: 'healthcare', text: 'Healthcare Facility' }
+            ],
+            lot: [
+                { value: 'land-clearing', text: 'Land Clearing' },
+                { value: 'grading', text: 'Grading & Leveling' },
+                { value: 'drainage', text: 'Drainage Systems' },
+                { value: 'landscaping', text: 'Landscaping' },
+                { value: 'fencing', text: 'Fencing' }
+            ],
+            plumbing: [
+                { value: 'leaks', text: 'Pipe Leaks' },
+                { value: 'drains', text: 'Clogged Drains' },
+                { value: 'water-heater', text: 'Water Heater' },
+                { value: 'sewer', text: 'Sewer Lines' },
+                { value: 'fixtures', text: 'Fixtures Installation' }
+            ],
+            electrical: [
+                { value: 'wiring', text: 'Wiring & Rewiring' },
+                { value: 'panels', text: 'Electrical Panels' },
+                { value: 'lighting', text: 'Lighting Installation' },
+                { value: 'outlets', text: 'Outlets & Switches' },
+                { value: 'generator', text: 'Generator Installation' }
+            ],
+            hvac: [
+                { value: 'ac-repair', text: 'AC Repair' },
+                { value: 'heating', text: 'Heating Systems' },
+                { value: 'ventilation', text: 'Ventilation' },
+                { value: 'installation', text: 'New Installation' },
+                { value: 'maintenance', text: 'Regular Maintenance' }
+            ],
+            renovation: [
+                { value: 'kitchen-remodel', text: 'Kitchen Remodeling' },
+                { value: 'bathroom-remodel', text: 'Bathroom Remodeling' },
+                { value: 'basement', text: 'Basement Finishing' },
+                { value: 'addition', text: 'Home Addition' },
+                { value: 'exterior', text: 'Exterior Renovation' }
+            ]
+        };
+
+        // Get category from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('category');
+        
+        // Set category in form
+        if (category) {
+            document.getElementById('category').value = category;
+            
+            // Populate subcategories based on category
+            const subcategorySelect = document.getElementById('subcategory');
+            const options = subcategories[category] || [];
+            
+            options.forEach(option => {
+                const optionElement = document.createElement('option');
+                optionElement.value = option.value;
+                optionElement.textContent = option.text;
+                subcategorySelect.appendChild(optionElement);
+            });
+        }
+
+        // Form submission
+        document.getElementById('problemForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData);
+            
+            console.log('Problem data:', data);
+            
+            // Redirect to candidates page
+            window.location.href = `candidates.html?category=${encodeURIComponent(data.category)}&subcategory=${encodeURIComponent(data.subcategory)}`;
+        });
+    </script>
+</body>
+</html>
