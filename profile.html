@@ -125,7 +125,7 @@
                         </div>
 
                         <div class="actions">
-                            <button class="btn btn-primary" onclick="hireContractor()">Hire This Professional</button>
+                            <button class="btn btn-primary" onclick="requestQuoteFromProfile()">Request Quote</button>
                             <button class="btn btn-outline" onclick="sendMessage()">Send Message</button>
                             <button class="btn btn-secondary" onclick="goBack()">Back to Candidates</button>
                         </div>
@@ -137,7 +137,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Swiftly. All rights reserved.</p>
+            <p>&copy; 2026 Swiftly. All rights reserved.</p>
         </div>
     </footer>
 
@@ -395,6 +395,25 @@
         }
 
         // Action functions
+        function requestQuoteFromProfile() {
+            const confirmed = confirm(`Send job request to ${contractor.name}?\n\nThis will:\n1. Send your job details to this contractor\n2. They can respond with a quote and timeline\n3. You'll receive a notification when they respond\n4. You can compare multiple responses before hiring`);
+            
+            if (confirmed) {
+                alert(`Job request sent to ${contractor.name}!\n\nYou can track all your job requests and responses in the "My Job Requests" section.\n\n(Placeholder - would integrate with Firestore)`);
+                
+                // In real implementation, this would:
+                // 1. Create a job request in Firestore
+                // 2. Send notification to contractor
+                // 3. Update job status to "pending_response"
+                // 4. Redirect to job requests page
+                
+                // For now, redirect to job requests page
+                setTimeout(() => {
+                    window.location.href = 'job-requests.html';
+                }, 2000);
+            }
+        }
+
         function hireContractor() {
             alert(`Hiring ${contractor.name}\n\nThis is a placeholder. In the full version, this would:\n1. Create a job in the system\n2. Notify the contractor\n3. Set up project management tools\n4. Handle payment processing`);
         }

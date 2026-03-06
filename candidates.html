@@ -33,7 +33,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Swiftly. All rights reserved.</p>
+            <p>&copy; 2026 Swiftly. All rights reserved.</p>
         </div>
     </footer>
 
@@ -244,13 +244,44 @@
                     </div>
                     <div class="contractor-description">${contractor.description}</div>
                     <div class="contractor-actions">
-                        <button class="btn btn-primary" onclick="viewProfile(${contractor.id})">View Profile</button>
-                        <button class="btn btn-outline" onclick="contactContractor('${contractor.phone}')">Contact</button>
+                        <button class="btn btn-primary" onclick="requestQuote(${contractor.id})">Request Quote</button>
+                        <button class="btn btn-outline" onclick="viewProfile(${contractor.id})">View Profile</button>
+                        <button class="btn btn-secondary" onclick="contactContractor('${contractor.phone}')">Contact</button>
                     </div>
                 `;
                 
                 grid.appendChild(card);
             });
+        }
+
+        // Request quote from contractor
+        function requestQuote(contractorId) {
+            const contractor = contractors[subcategory]?.find(c => c.id === contractorId) || 
+                             contractors['default']?.find(c => c.id === contractorId);
+            
+            if (contractor) {
+                const confirmed = confirm(`Send job request to ${contractor.name}?\n\nThis will:\n1. Send your job details to this contractor\n2. They can respond with a quote and timeline\n3. You'll receive a notification when they respond\n4. You can compare multiple responses before hiring`);
+                
+                if (confirmed) {
+                    // Get job details from session storage or URL params
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const category = urlParams.get('category');
+                    const subcategory = urlParams.get('subcategory');
+                    
+                    alert(`Job request sent to ${contractor.name}!\n\nYou can track all your job requests and responses in the "My Job Requests" section.\n\n(Placeholder - would integrate with Firestore)`);
+                    
+                    // In real implementation, this would:
+                    // 1. Create a job request in Firestore
+                    // 2. Send notification to contractor
+                    // 3. Update job status to "pending_response"
+                    // 4. Redirect to job requests page
+                    
+                    // For now, redirect to job requests page
+                    setTimeout(() => {
+                        window.location.href = 'job-requests.html';
+                    }, 2000);
+                }
+            }
         }
 
         // View contractor profile

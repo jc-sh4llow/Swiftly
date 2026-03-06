@@ -24,6 +24,7 @@ header {
     color: white;
     padding: 1rem 0;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: relative;
 }
 
 .logo h1 {
@@ -35,6 +36,13 @@ header {
 .logo p {
     font-size: 0.9rem;
     opacity: 0.9;
+}
+
+.user-nav {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /* Main Content */
