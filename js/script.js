@@ -1,73 +1,189 @@
-// Basic JavaScript for Swiftly Website
-// This will be expanded when we add more functionality
+// DOM Elements
+const tabBtns = document.querySelectorAll('.tab-btn');
+const authForms = document.querySelectorAll('.auth-form');
+const authSwitches = document.querySelectorAll('.auth-switch a');
 
-// Tab switching functionality for login/register
-document.addEventListener('DOMContentLoaded', function() {
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const authForms = document.querySelectorAll('.auth-form');
-
-    tabButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const targetTab = this.getAttribute('data-tab');
-            
-            // Remove active class from all buttons and forms
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            authForms.forEach(form => form.classList.remove('active'));
-            
-            // Add active class to clicked button and corresponding form
-            this.classList.add('active');
-            document.getElementById(targetTab + 'Form').classList.add('active');
-        });
+// Tab switching functionality
+tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const targetTab = btn.getAttribute('data-tab');
+        
+        // Remove active class from all tabs and forms
+        tabBtns.forEach(tab => tab.classList.remove('active'));
+        authForms.forEach(form => form.classList.remove('active'));
+        
+        // Add active class to clicked tab and corresponding form
+        btn.classList.add('active');
+        document.getElementById(`${targetTab}-form`).classList.add('active');
     });
-
-    // Form submission handlers (placeholder for now)
-    const loginForm = document.getElementById('loginForm');
-    const registerForm = document.getElementById('registerForm');
-
-    if (loginForm) {
-        loginForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Placeholder for login logic
-            console.log('Login submitted');
-            // Will redirect to category page after implementation
-            window.location.href = 'categories.html';
-        });
-    }
-
-    if (registerForm) {
-        registerForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Placeholder for registration logic
-            console.log('Registration submitted');
-            // Will redirect to category page after implementation
-            window.location.href = 'categories.html';
-        });
-    }
 });
 
-// Function to navigate between pages (placeholder)
-function navigateToPage(page) {
-    window.location.href = page;
-}
+// Auth switch links
+authSwitches.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetTab = link.getAttribute('data-tab');
+        
+        // Remove active class from all tabs and forms
+        tabBtns.forEach(tab => tab.classList.remove('active'));
+        authForms.forEach(form => form.classList.remove('active'));
+        
+        // Add active class to target tab and form
+        document.querySelector(`[data-tab="${targetTab}"]`).classList.add('active');
+        document.getElementById(`${targetTab}-form`).classList.add('active');
+    });
+});
 
-// Function to handle category selection
-function selectCategory(category) {
-    console.log('Selected category:', category);
-    // Will store selection and redirect to problem page
-    localStorage.setItem('selectedCategory', category);
-    window.location.href = 'problem.html';
-}
+// Form submissions (placeholder for future Firestore integration)
+document.getElementById('loginForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+    
+    // Placeholder: In real implementation, this would connect to Firestore
+    console.log('Login attempt:', { email, password });
+    
+    // Simulate successful login and redirect
+    alert('Login successful! (This is a placeholder - would connect to Firestore)');
+    window.location.href = 'categories.html';
+});
 
-// Function to handle contractor selection
-function selectContractor(contractorId) {
-    console.log('Selected contractor:', contractorId);
-    // Will store selection and redirect to profile page
-    localStorage.setItem('selectedContractor', contractorId);
-    window.location.href = 'contractor-profile.html';
-}
+document.getElementById('registerForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const name = document.getElementById('registerName').value;
+    const email = document.getElementById('registerEmail').value;
+    const phone = document.getElementById('registerPhone').value;
+    const password = document.getElementById('registerPassword').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+    
+    // Basic validation
+    if (password !== confirmPassword) {
+        alert('Passwords do not match!');
+        return;
+    }
+    
+    // Placeholder: In real implementation, this would connect to Firestore
+    console.log('Registration attempt:', { name, email, phone, password });
+    
+    // Simulate successful registration and redirect
+    alert('Registration successful! (This is a placeholder - would connect to Firestore)');
+    window.location.href = 'categories.html';
+});
 
-// Function to handle messaging placeholder
-function openMessaging(contractorId) {
-    console.log('Opening messaging with contractor:', contractorId);
-    alert('Messaging system coming soon! Please contact the contractor directly using the provided information.');
-}
+// Utility functions for future Firestore integration
+const firebaseUtils = {
+    // Placeholder for Firebase initialization
+    initFirebase: () => {
+        // Future: Initialize Firebase here
+        console.log('Firebase would be initialized here');
+    },
+    
+    // Placeholder for user authentication
+    loginUser: async (email, password) => {
+        // Future: Firebase auth login
+        console.log('Would login user:', email);
+    },
+    
+    // Placeholder for user registration
+    registerUser: async (userData) => {
+        // Future: Firebase auth registration
+        console.log('Would register user:', userData);
+    },
+    
+    // Placeholder for logout
+    logoutUser: async () => {
+        // Future: Firebase auth logout
+        console.log('Would logout user');
+    }
+};
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Swiftly website loaded');
+    // Future: Initialize Firebase when ready
+    // firebaseUtils.initFirebase();
+});
+
+// Navigation helper functions
+const navigation = {
+    goToCategories: () => {
+        window.location.href = 'categories.html';
+    },
+    
+    goToProblem: (category) => {
+        window.location.href = `problem.html?category=${encodeURIComponent(category)}`;
+    },
+    
+    goToCandidates: (category, subcategory) => {
+        window.location.href = `candidates.html?category=${encodeURIComponent(category)}&subcategory=${encodeURIComponent(subcategory)}`;
+    },
+    
+    goToProfile: (contractorId) => {
+        window.location.href = `profile.html?id=${contractorId}`;
+    }
+};
+
+// Data structure for Firestore migration (placeholder)
+const dataStructure = {
+    users: {
+        userId: {
+            name: 'string',
+            email: 'string',
+            phone: 'string',
+            createdAt: 'timestamp',
+            userType: 'customer|contractor'
+        }
+    },
+    
+    categories: {
+        categoryId: {
+            name: 'string',
+            icon: 'string',
+            description: 'string',
+            subcategories: ['subcategoryIds']
+        }
+    },
+    
+    subcategories: {
+        subcategoryId: {
+            name: 'string',
+            categoryId: 'string',
+            description: 'string'
+        }
+    },
+    
+    contractors: {
+        contractorId: {
+            userId: 'string',
+            businessName: 'string',
+            specialties: ['string'],
+            description: 'string',
+            rating: 'number',
+            reviewCount: 'number',
+            contactInfo: {
+                phone: 'string',
+                email: 'string',
+                address: 'string'
+            },
+            verified: 'boolean',
+            available: 'boolean'
+        }
+    },
+    
+    jobs: {
+        jobId: {
+            customerId: 'string',
+            contractorId: 'string',
+            categoryId: 'string',
+            subcategoryId: 'string',
+            description: 'string',
+            status: 'pending|active|completed|cancelled',
+            createdAt: 'timestamp',
+            completedAt: 'timestamp',
+            rating: 'number',
+            review: 'string'
+        }
+    }
+};

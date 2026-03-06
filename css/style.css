@@ -22,24 +22,24 @@ body {
 header {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    padding: 2rem 0;
-    text-align: center;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.logo {
+.logo h1 {
     font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
 }
 
-.tagline {
-    font-size: 1.1rem;
+.logo p {
+    font-size: 0.9rem;
     opacity: 0.9;
 }
 
 /* Main Content */
 main {
-    min-height: calc(100vh - 200px);
+    min-height: calc(100vh - 140px);
     padding: 2rem 0;
 }
 
@@ -48,13 +48,13 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 60vh;
+    padding: 2rem 0;
 }
 
 .auth-container {
     background: white;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     overflow: hidden;
     width: 100%;
     max-width: 450px;
@@ -63,6 +63,7 @@ main {
 .auth-tabs {
     display: flex;
     background: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
 }
 
 .tab-btn {
@@ -72,22 +73,27 @@ main {
     background: transparent;
     cursor: pointer;
     font-size: 1rem;
-    font-weight: 600;
-    color: #666;
+    font-weight: 500;
     transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
 }
 
 .tab-btn.active {
     background: white;
     color: #667eea;
-    border-bottom: 3px solid #667eea;
+    border-bottom-color: #667eea;
 }
 
-.auth-forms {
-    padding: 2rem;
+.tab-btn:hover {
+    background: #e9ecef;
+}
+
+.tab-btn.active:hover {
+    background: white;
 }
 
 .auth-form {
+    padding: 2rem;
     display: none;
 }
 
@@ -99,6 +105,7 @@ main {
     text-align: center;
     margin-bottom: 1.5rem;
     color: #333;
+    font-size: 1.8rem;
 }
 
 .form-group {
@@ -108,14 +115,14 @@ main {
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    font-weight: 600;
+    font-weight: 500;
     color: #555;
 }
 
 .form-group input {
     width: 100%;
     padding: 0.75rem;
-    border: 2px solid #e1e5e9;
+    border: 2px solid #e9ecef;
     border-radius: 8px;
     font-size: 1rem;
     transition: border-color 0.3s ease;
@@ -126,18 +133,17 @@ main {
     border-color: #667eea;
 }
 
-/* Button Styles */
 .btn {
     display: inline-block;
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 2rem;
     border: none;
     border-radius: 8px;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 500;
     cursor: pointer;
-    transition: all 0.3s ease;
     text-decoration: none;
     text-align: center;
+    transition: all 0.3s ease;
 }
 
 .btn-primary {
@@ -148,18 +154,23 @@ main {
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
-.btn-secondary {
-    background: #f8f9fa;
+.auth-switch {
+    text-align: center;
+    margin-top: 1rem;
+    color: #666;
+}
+
+.auth-switch a {
     color: #667eea;
-    border: 2px solid #667eea;
+    text-decoration: none;
+    font-weight: 500;
 }
 
-.btn-secondary:hover {
-    background: #667eea;
-    color: white;
+.auth-switch a:hover {
+    text-decoration: underline;
 }
 
 /* Footer */
@@ -167,11 +178,15 @@ footer {
     background: #333;
     color: white;
     text-align: center;
-    padding: 1.5rem 0;
+    padding: 1rem 0;
     margin-top: auto;
 }
 
-/* Category Grid Styles */
+/* Category Selection Page */
+.category-section {
+    padding: 2rem 0;
+}
+
 .category-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -184,14 +199,16 @@ footer {
     border-radius: 12px;
     padding: 2rem;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    text-decoration: none;
+    color: inherit;
 }
 
 .category-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 .category-icon {
@@ -199,22 +216,74 @@ footer {
     margin-bottom: 1rem;
 }
 
-.category-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #333;
+.category-card h3 {
     margin-bottom: 0.5rem;
+    color: #333;
 }
 
-.category-description {
+.category-card p {
     color: #666;
     font-size: 0.9rem;
 }
 
-/* Contractor Cards */
-.contractor-grid {
+/* Problem Description Page */
+.problem-section {
+    padding: 2rem 0;
+}
+
+.problem-form {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.problem-form h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+ textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 120px;
+}
+
+ textarea:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+/* Candidates Page */
+.candidates-section {
+    padding: 2rem 0;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.page-header h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    color: #666;
+}
+
+.candidates-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
@@ -222,115 +291,95 @@ footer {
 .contractor-card {
     background: white;
     border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
 }
 
 .contractor-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
 }
 
 .contractor-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.contractor-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: white;
-    padding: 1.5rem;
-    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 1rem;
 }
 
-.contractor-name {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+.contractor-info h4 {
+    margin-bottom: 0.25rem;
+    color: #333;
 }
 
-.contractor-specialty {
-    opacity: 0.9;
-}
-
-.contractor-body {
-    padding: 1.5rem;
+.contractor-info .specialty {
+    color: #667eea;
+    font-size: 0.9rem;
 }
 
 .rating {
     display: flex;
-    justify-content: center;
+    align-items: center;
     margin-bottom: 1rem;
 }
 
-.star {
+.stars {
     color: #ffc107;
-    font-size: 1.2rem;
+    margin-right: 0.5rem;
 }
 
-.contractor-info {
-    margin-bottom: 1rem;
-}
-
-.contractor-info p {
-    margin-bottom: 0.5rem;
+.rating-score {
     color: #666;
+    font-size: 0.9rem;
 }
 
-.contact-info {
+.contractor-description {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.contractor-actions {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid #eee;
+    gap: 1rem;
 }
 
-/* Problem Form Styles */
-.problem-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 60vh;
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+    flex: 1;
 }
 
-.problem-container {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
-    width: 100%;
-    max-width: 600px;
+.btn-secondary:hover {
+    background: #5a6268;
 }
 
-.form-group textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 2px solid #e1e5e9;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-family: inherit;
-    resize: vertical;
-    transition: border-color 0.3s ease;
+.btn-outline {
+    background: transparent;
+    color: #667eea;
+    border: 2px solid #667eea;
+    flex: 1;
 }
 
-.form-group textarea:focus {
-    outline: none;
-    border-color: #667eea;
+.btn-outline:hover {
+    background: #667eea;
+    color: white;
 }
 
-.form-group select {
-    width: 100%;
-    padding: 0.75rem;
-    border: 2px solid #e1e5e9;
-    border-radius: 8px;
-    font-size: 1rem;
-    background: white;
-    cursor: pointer;
-    transition: border-color 0.3s ease;
-}
-
-.form-group select:focus {
-    outline: none;
-    border-color: #667eea;
-}
-
-/* Profile Page Styles */
+/* Profile Page */
 .profile-section {
     padding: 2rem 0;
 }
@@ -338,110 +387,53 @@ footer {
 .profile-container {
     background: white;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .profile-header {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     padding: 2rem;
+    text-align: center;
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: white;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 2.5rem;
+    color: #667eea;
+    font-weight: bold;
 }
 
-.profile-info h2 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-}
-
-.profile-info p {
-    opacity: 0.9;
-    margin-bottom: 1rem;
-}
-
-.profile-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.profile-content {
+.profile-body {
     padding: 2rem;
 }
 
-.profile-details h3 {
-    color: #333;
+.contact-info {
+    margin-bottom: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
     margin-bottom: 1rem;
-    margin-top: 2rem;
-}
-
-.profile-details h3:first-child {
-    margin-top: 0;
-}
-
-.business-info p,
-.contact-details p {
-    margin-bottom: 0.75rem;
-    color: #666;
-}
-
-.services-list {
-    list-style: none;
-    padding: 0;
-}
-
-.services-list li {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #eee;
-    color: #666;
-}
-
-.services-list li:before {
-    content: "✓";
-    color: #667eea;
-    font-weight: bold;
-    margin-right: 0.5rem;
-}
-
-.reviews-section {
-    margin-top: 1rem;
-}
-
-.review {
+    padding: 0.75rem;
     background: #f8f9fa;
     border-radius: 8px;
-    padding: 1.5rem;
-    margin-bottom: 1rem;
 }
 
-.review-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.75rem;
-}
-
-.reviewer-name {
-    font-weight: 600;
-    color: #333;
-}
-
-.review-rating {
-    display: flex;
-}
-
-.review-text {
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 0.5rem;
-}
-
-.review-date {
-    font-size: 0.85rem;
-    color: #999;
+.contact-icon {
+    margin-right: 1rem;
+    color: #667eea;
 }
 
 /* Responsive Design */
@@ -450,49 +442,38 @@ footer {
         padding: 0 15px;
     }
     
-    .logo {
+    .logo h1 {
         font-size: 2rem;
     }
     
-    .category-grid,
-    .contractor-grid {
+    .category-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+    
+    .candidates-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
     }
     
     .auth-container {
-        margin: 1rem;
+        margin: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .category-card {
+        padding: 1.5rem;
     }
     
-    .problem-container {
-        margin: 1rem;
-        padding: 1.5rem;
+    .contractor-actions {
+        flex-direction: column;
     }
     
     .profile-header {
-        flex-direction: column;
-        text-align: center;
-        gap: 1.5rem;
-    }
-    
-    .profile-actions {
-        justify-content: center;
-    }
-    
-    .profile-content {
         padding: 1.5rem;
     }
-}
-
-/* Utility Classes */
-.text-center {
-    text-align: center;
-}
-
-.mb-2 {
-    margin-bottom: 2rem;
-}
-
-.mt-2 {
-    margin-top: 2rem;
+    
+    .profile-body {
+        padding: 1.5rem;
+    }
 }

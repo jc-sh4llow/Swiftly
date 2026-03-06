@@ -3,208 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swiftly - Available Contractors</title>
+    <title>Swiftly - Available Professionals</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1 class="logo">Swiftly</h1>
-            <p class="tagline">Available contractors for your project</p>
+            <div class="logo">
+                <h1>Swiftly</h1>
+                <p>Fast. Reliable. Professional.</p>
+            </div>
         </div>
     </header>
 
     <main>
         <section class="candidates-section">
             <div class="container">
-                <h2 class="text-center mb-2">Recommended Contractors</h2>
-                
-                <div class="contractor-grid">
-                    <!-- Contractor 1 -->
-                    <div class="contractor-card">
-                        <div class="contractor-header">
-                            <h3 class="contractor-name">ABC Home Solutions</h3>
-                            <p class="contractor-specialty">General Construction & Renovation</p>
-                        </div>
-                        <div class="contractor-body">
-                            <div class="rating">
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star">☆</span>
-                                <span>4.2 (127 reviews)</span>
-                            </div>
-                            <div class="contractor-info">
-                                <p><strong>Experience:</strong> 15+ years</p>
-                                <p><strong>Specialties:</strong> Kitchen, Bathroom, General Construction</p>
-                                <p><strong>Service Area:</strong> Metro Manila & surrounding provinces</p>
-                                <p><strong>Response Time:</strong> Usually within 2 hours</p>
-                            </div>
-                            <div class="contact-info">
-                                <span>📞 0917-123-4567</span>
-                                <button class="btn btn-secondary" onclick="selectContractor('1')">View Profile</button>
-                            </div>
-                            <div class="contact-info">
-                                <button class="btn btn-primary" onclick="openMessaging('1')">Message</button>
-                            </div>
-                        </div>
-                    </div>
+                <div class="page-header">
+                    <h2>Available Professionals</h2>
+                    <p id="categoryDescription">Find the right professional for your needs</p>
+                </div>
 
-                    <!-- Contractor 2 -->
-                    <div class="contractor-card">
-                        <div class="contractor-header">
-                            <h3 class="contractor-name">QuickFix Pro Services</h3>
-                            <p class="contractor-specialty">Plumbing & Electrical</p>
-                        </div>
-                        <div class="contractor-body">
-                            <div class="rating">
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span>4.8 (89 reviews)</span>
-                            </div>
-                            <div class="contractor-info">
-                                <p><strong>Experience:</strong> 10+ years</p>
-                                <p><strong>Specialties:</strong> Plumbing, Electrical, Emergency Repairs</p>
-                                <p><strong>Service Area:</strong> Quezon City, Mandaluyong, San Juan</p>
-                                <p><strong>Response Time:</strong> Within 1 hour</p>
-                            </div>
-                            <div class="contact-info">
-                                <span>📞 0920-987-6543</span>
-                                <button class="btn btn-secondary" onclick="selectContractor('2')">View Profile</button>
-                            </div>
-                            <div class="contact-info">
-                                <button class="btn btn-primary" onclick="openMessaging('2')">Message</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Contractor 3 -->
-                    <div class="contractor-card">
-                        <div class="contractor-header">
-                            <h3 class="contractor-name">Maestro Builders</h3>
-                            <p class="contractor-specialty">Custom Home Construction</p>
-                        </div>
-                        <div class="contractor-body">
-                            <div class="rating">
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span>4.9 (203 reviews)</span>
-                            </div>
-                            <div class="contractor-info">
-                                <p><strong>Experience:</strong> 20+ years</p>
-                                <p><strong>Specialties:</strong> Custom Homes, Major Renovations, Design-Build</p>
-                                <p><strong>Service Area:</strong> Entire Metro Manila</p>
-                                <p><strong>Response Time:</strong> Within 24 hours</p>
-                            </div>
-                            <div class="contact-info">
-                                <span>📞 0915-555-1234</span>
-                                <button class="btn btn-secondary" onclick="selectContractor('3')">View Profile</button>
-                            </div>
-                            <div class="contact-info">
-                                <button class="btn btn-primary" onclick="openMessaging('3')">Message</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Contractor 4 -->
-                    <div class="contractor-card">
-                        <div class="contractor-header">
-                            <h3 class="contractor-name">Reliable Handyman</h3>
-                            <p class="contractor-specialty">General Repairs & Maintenance</p>
-                        </div>
-                        <div class="contractor-body">
-                            <div class="rating">
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star">☆</span>
-                                <span>4.1 (156 reviews)</span>
-                            </div>
-                            <div class="contractor-info">
-                                <p><strong>Experience:</strong> 8+ years</p>
-                                <p><strong>Specialties:</strong> Minor repairs, maintenance, installations</p>
-                                <p><strong>Service Area:</strong> Makati, Pasay, Taguig</p>
-                                <p><strong>Response Time:</strong> Within 3 hours</p>
-                            </div>
-                            <div class="contact-info">
-                                <span>📞 0933-777-8888</span>
-                                <button class="btn btn-secondary" onclick="selectContractor('4')">View Profile</button>
-                            </div>
-                            <div class="contact-info">
-                                <button class="btn btn-primary" onclick="openMessaging('4')">Message</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Contractor 5 -->
-                    <div class="contractor-card">
-                        <div class="contractor-header">
-                            <h3 class="contractor-name">Elite Electrical Co.</h3>
-                            <p class="contractor-specialty">Electrical Services & Wiring</p>
-                        </div>
-                        <div class="contractor-body">
-                            <div class="rating">
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span>4.7 (92 reviews)</span>
-                            </div>
-                            <div class="contractor-info">
-                                <p><strong>Experience:</strong> 12+ years</p>
-                                <p><strong>Specialties:</strong> Electrical wiring, panel upgrades, lighting</p>
-                                <p><strong>Service Area:</strong> Manila, Caloocan, Malabon</p>
-                                <p><strong>Response Time:</strong> Within 2 hours</p>
-                            </div>
-                            <div class="contact-info">
-                                <span>📞 0918-222-3333</span>
-                                <button class="btn btn-secondary" onclick="selectContractor('5')">View Profile</button>
-                            </div>
-                            <div class="contact-info">
-                                <button class="btn btn-primary" onclick="openMessaging('5')">Message</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Contractor 6 -->
-                    <div class="contractor-card">
-                        <div class="contractor-header">
-                            <h3 class="contractor-name">Pro Plumbing Solutions</h3>
-                            <p class="contractor-specialty">Professional Plumbing Services</p>
-                        </div>
-                        <div class="contractor-body">
-                            <div class="rating">
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star">☆</span>
-                                <span>4.3 (178 reviews)</span>
-                            </div>
-                            <div class="contractor-info">
-                                <p><strong>Experience:</strong> 14+ years</p>
-                                <p><strong>Specialties:</strong> Pipe repairs, installations, drain cleaning</p>
-                                <p><strong>Service Area:</strong> Pasig, Cainta, Taytay</p>
-                                <p><strong>Response Time:</strong> Within 1 hour for emergencies</p>
-                            </div>
-                            <div class="contact-info">
-                                <span>📞 0927-444-5555</span>
-                                <button class="btn btn-secondary" onclick="selectContractor('6')">View Profile</button>
-                            </div>
-                            <div class="contact-info">
-                                <button class="btn btn-primary" onclick="openMessaging('6')">Message</button>
-                            </div>
-                        </div>
-                    </div>
+                <div class="candidates-grid" id="candidatesGrid">
+                    <!-- Candidates will be dynamically loaded here -->
                 </div>
             </div>
         </section>
@@ -217,5 +38,248 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        // Hardcoded contractor data (ready for Firestore migration)
+        const contractors = {
+            'kitchen': [
+                {
+                    id: 1,
+                    name: 'John Smith',
+                    businessName: 'Smith Kitchen Solutions',
+                    specialty: 'Kitchen Remodeling',
+                    rating: 4.8,
+                    reviewCount: 127,
+                    description: 'Specializing in modern kitchen designs and renovations. Over 15 years of experience.',
+                    phone: '+1-555-0123',
+                    email: 'john@smithkitchen.com',
+                    verified: true,
+                    available: true
+                },
+                {
+                    id: 2,
+                    name: 'Maria Garcia',
+                    businessName: 'Garcia Home Improvements',
+                    specialty: 'Kitchen & Bathroom',
+                    rating: 4.6,
+                    reviewCount: 89,
+                    description: 'Full-service home improvement with focus on quality craftsmanship and customer satisfaction.',
+                    phone: '+1-555-0124',
+                    email: 'maria@garciahome.com',
+                    verified: true,
+                    available: true
+                },
+                {
+                    id: 3,
+                    name: 'David Chen',
+                    businessName: 'Chen Construction',
+                    specialty: 'Custom Cabinetry',
+                    rating: 4.9,
+                    reviewCount: 203,
+                    description: 'Expert in custom cabinetry and woodworking. Premium materials and attention to detail.',
+                    phone: '+1-555-0125',
+                    email: 'david@chenconstruction.com',
+                    verified: true,
+                    available: false
+                }
+            ],
+            'bathroom': [
+                {
+                    id: 4,
+                    name: 'Lisa Johnson',
+                    businessName: 'Johnson Bathrooms',
+                    specialty: 'Bathroom Renovation',
+                    rating: 4.7,
+                    reviewCount: 156,
+                    description: 'Complete bathroom renovations from plumbing to finishing touches.',
+                    phone: '+1-555-0126',
+                    email: 'lisa@johnsonbath.com',
+                    verified: true,
+                    available: true
+                },
+                {
+                    id: 5,
+                    name: 'Robert Taylor',
+                    businessName: 'Taylor Plumbing & Bath',
+                    specialty: 'Plumbing & Bathroom',
+                    rating: 4.5,
+                    reviewCount: 94,
+                    description: 'Licensed plumber specializing in bathroom installations and repairs.',
+                    phone: '+1-555-0127',
+                    email: 'robert@taylorplumbing.com',
+                    verified: true,
+                    available: true
+                }
+            ],
+            'plumbing': [
+                {
+                    id: 6,
+                    name: 'Mike Wilson',
+                    businessName: 'Wilson Plumbing Services',
+                    specialty: 'Emergency Plumbing',
+                    rating: 4.8,
+                    reviewCount: 312,
+                    description: '24/7 emergency plumbing services. Licensed and insured.',
+                    phone: '+1-555-0128',
+                    email: 'mike@wilsonplumbing.com',
+                    verified: true,
+                    available: true
+                },
+                {
+                    id: 7,
+                    name: 'Tom Anderson',
+                    businessName: 'Anderson Plumbing',
+                    specialty: 'Residential Plumbing',
+                    rating: 4.4,
+                    reviewCount: 78,
+                    description: 'Reliable residential plumbing repairs and installations.',
+                    phone: '+1-555-0129',
+                    email: 'tom@andersonplumbing.com',
+                    verified: false,
+                    available: true
+                }
+            ],
+            'electrical': [
+                {
+                    id: 8,
+                    name: 'James Brown',
+                    businessName: 'Brown Electrical Solutions',
+                    specialty: 'Residential Electrical',
+                    rating: 4.9,
+                    reviewCount: 189,
+                    description: 'Licensed electrician with 20+ years of experience in residential electrical work.',
+                    phone: '+1-555-0130',
+                    email: 'james@brownelectrical.com',
+                    verified: true,
+                    available: true
+                },
+                {
+                    id: 9,
+                    name: 'Kevin Martinez',
+                    businessName: 'Martinez Electric',
+                    specialty: 'Commercial & Residential',
+                    rating: 4.6,
+                    reviewCount: 134,
+                    description: 'Full-service electrical contractor for both commercial and residential projects.',
+                    phone: '+1-555-0131',
+                    email: 'kevin@martinezelectric.com',
+                    verified: true,
+                    available: false
+                }
+            ],
+            'default': [
+                {
+                    id: 10,
+                    name: 'General Contractor Pro',
+                    businessName: 'GC Professional Services',
+                    specialty: 'General Contracting',
+                    rating: 4.5,
+                    reviewCount: 267,
+                    description: 'Full-service general contracting for all your home improvement needs.',
+                    phone: '+1-555-0132',
+                    email: 'info@gcpro.com',
+                    verified: true,
+                    available: true
+                },
+                {
+                    id: 11,
+                    name: 'Home Repair Experts',
+                    businessName: 'HRE Solutions',
+                    specialty: 'Home Repair',
+                    rating: 4.3,
+                    reviewCount: 145,
+                    description: 'Reliable home repair and maintenance services.',
+                    phone: '+1-555-0133',
+                    email: 'service@hre.com',
+                    verified: false,
+                    available: true
+                }
+            ]
+        };
+
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('category');
+        const subcategory = urlParams.get('subcategory');
+
+        // Update page header
+        function updatePageHeader() {
+            const categoryDescriptions = {
+                'kitchen': 'Kitchen remodeling and installation specialists',
+                'bathroom': 'Bathroom renovation and plumbing experts',
+                'plumbing': 'Professional plumbing services',
+                'electrical': 'Licensed electrical contractors',
+                'hvac': 'Heating, ventilation, and air conditioning specialists',
+                'roofing': 'Roofing repair and installation experts',
+                'flooring': 'Flooring installation and repair services',
+                'windows': 'Window and door installation specialists'
+            };
+
+            const description = categoryDescriptions[subcategory] || 'Qualified professionals for your project';
+            document.getElementById('categoryDescription').textContent = description;
+        }
+
+        // Render contractor cards
+        function renderContractors(contractorList) {
+            const grid = document.getElementById('candidatesGrid');
+            grid.innerHTML = '';
+
+            contractorList.forEach(contractor => {
+                const card = document.createElement('div');
+                card.className = 'contractor-card';
+                
+                const stars = '★'.repeat(Math.floor(contractor.rating)) + 
+                             '☆'.repeat(5 - Math.floor(contractor.rating));
+                
+                card.innerHTML = `
+                    <div class="contractor-header">
+                        <div class="contractor-avatar">${contractor.name.split(' ').map(n => n[0]).join('')}</div>
+                        <div class="contractor-info">
+                            <h4>${contractor.name}</h4>
+                            <div class="specialty">${contractor.specialty}</div>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <span class="stars">${stars}</span>
+                        <span class="rating-score">${contractor.rating} (${contractor.reviewCount} reviews)</span>
+                    </div>
+                    <div class="contractor-description">${contractor.description}</div>
+                    <div class="contractor-actions">
+                        <button class="btn btn-primary" onclick="viewProfile(${contractor.id})">View Profile</button>
+                        <button class="btn btn-outline" onclick="contactContractor('${contractor.phone}')">Contact</button>
+                    </div>
+                `;
+                
+                grid.appendChild(card);
+            });
+        }
+
+        // View contractor profile
+        function viewProfile(contractorId) {
+            window.location.href = `profile.html?id=${contractorId}`;
+        }
+
+        // Contact contractor (placeholder)
+        function contactContractor(phone) {
+            alert(`Contact: ${phone}\n\nThis is a placeholder. In the full version, this would open a messaging system or provide more contact options.`);
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            updatePageHeader();
+            
+            // Get contractors for the selected subcategory
+            let selectedContractors = contractors[subcategory] || contractors['default'];
+            
+            // Sort by rating and availability
+            selectedContractors = selectedContractors
+                .sort((a, b) => {
+                    if (a.available && !b.available) return -1;
+                    if (!a.available && b.available) return 1;
+                    return b.rating - a.rating;
+                });
+            
+            renderContractors(selectedContractors);
+        });
+    </script>
 </body>
 </html>

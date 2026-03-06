@@ -9,39 +9,69 @@
 <body>
     <header>
         <div class="container">
-            <h1 class="logo">Swiftly</h1>
-            <p class="tagline">What type of property needs service?</p>
+            <div class="logo">
+                <h1>Swiftly</h1>
+                <p>Fast. Reliable. Professional.</p>
+            </div>
         </div>
     </header>
 
     <main>
         <section class="category-section">
             <div class="container">
-                <h2 class="text-center mb-2">Select Property Type</h2>
+                <div class="page-header">
+                    <h2>What type of problem do you have?</h2>
+                    <p>Select a category to find the right professionals for your needs</p>
+                </div>
+
                 <div class="category-grid">
-                    <div class="category-card" onclick="selectCategory('house')">
+                    <a href="problem.html?category=house" class="category-card">
                         <div class="category-icon">🏠</div>
-                        <h3 class="category-title">House</h3>
-                        <p class="category-description">Complete home services and renovations</p>
-                    </div>
-                    
-                    <div class="category-card" onclick="selectCategory('condo')">
+                        <h3>House</h3>
+                        <p>General home repairs and maintenance</p>
+                    </a>
+
+                    <a href="problem.html?category=condo" class="category-card">
                         <div class="category-icon">🏢</div>
-                        <h3 class="category-title">Condominium</h3>
-                        <p class="category-description">Specialized condo unit services</p>
-                    </div>
-                    
-                    <div class="category-card" onclick="selectCategory('commercial')">
+                        <h3>Condo</h3>
+                        <p>Condominium specific services</p>
+                    </a>
+
+                    <a href="problem.html?category=commercial" class="category-card">
                         <div class="category-icon">🏬</div>
-                        <h3 class="category-title">Commercial</h3>
-                        <p class="category-description">Business and commercial property services</p>
-                    </div>
-                    
-                    <div class="category-card" onclick="selectCategory('lot')">
+                        <h3>Commercial</h3>
+                        <p>Business and commercial properties</p>
+                    </a>
+
+                    <a href="problem.html?category=lot" class="category-card">
                         <div class="category-icon">🏗️</div>
-                        <h3 class="category-title">Lot/Land</h3>
-                        <p class="category-description">Land development and construction</p>
-                    </div>
+                        <h3>Lot</h3>
+                        <p>Land and lot development</p>
+                    </a>
+
+                    <a href="problem.html?category=plumbing" class="category-card">
+                        <div class="category-icon">🔧</div>
+                        <h3>Plumbing</h3>
+                        <P>Pipes, drains, and water systems</P>
+                    </a>
+
+                    <a href="problem.html?category=electrical" class="category-card">
+                        <div class="category-icon">⚡</div>
+                        <h3>Electrical</h3>
+                        <p>Wiring, circuits, and electrical systems</p>
+                    </a>
+
+                    <a href="problem.html?category=hvac" class="category-card">
+                        <div class="category-icon">❄️</div>
+                        <h3>HVAC</h3>
+                        <p>Heating, ventilation, and air conditioning</p>
+                    </a>
+
+                    <a href="problem.html?category=renovation" class="category-card">
+                        <div class="category-icon">🔨</div>
+                        <h3>Renovation</h3>
+                        <p>Home remodeling and improvements</p>
+                    </a>
                 </div>
             </div>
         </section>
